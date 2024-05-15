@@ -1,0 +1,39 @@
+GET http://localhost:8080/employee/getAll?page=2&size=3
+Accept-Language: uz
+
+### Get By id
+GET http://localhost:8080/employee/14
+
+### Create
+POST http://localhost:8080/employee/create
+Content-Type: application/json
+
+{
+  "name": "Xasan",
+  "surname": "Xusanov",
+  "age": 21,
+  "address": "Sirdaryo",
+  "phone": "+9999999",
+  "salary": "400$",
+  "position": 6
+}
+
+### Delete By id
+DELETE http://localhost:8080/employee/delete/13
+
+### Get By Phone
+GET http://localhost:8080/employee/getByPhone/+998911111
+
+###
+PUT http://localhost:8080/employee/update/16
+Content-Type: application/json
+
+{
+  "name": "Xasan_Xusan",
+  "surname": "Xasan update",
+  "age": 23,
+  "address": "Yunusobod",
+  "phone": "+99931234354675867689",
+  "position": 6,
+  "salary": "600$"
+}
