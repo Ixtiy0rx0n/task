@@ -102,11 +102,6 @@ public class EmployeeService {
     }
 
     public byte[] filterDownload() throws IOException {
-//        String deanId = null;
-//        if (EntityDetails.isDean()) {
-//            deanId = EntityDetails.getCurrentUserId();
-//        }
-//        List<StudentDTO> studentList = studentCustomFilter.filterForDownload(filter, lang, deanId);
         List<EmployeeEntity> entityList = employeeRepository.findAll();
         return filterDownload(entityList);
     }
@@ -230,7 +225,7 @@ public class EmployeeService {
             dto.setCreatedDate(entity.getCreatedDate());
 
             if(entity.getPosition() != null) {
-                dto.setPosition(entity.getPosition().getPositionName());
+            dto.setPosition(entity.getPosition().getPositionName());
             }
             dtoList.add(dto);
         }
