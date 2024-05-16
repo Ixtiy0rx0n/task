@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -28,4 +29,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Intege
             " e.address=:address, e.salary=:salary, e.positionId=:position, e.updatedDate=:updatedDate")
     Integer update(String name, String phone, String surname, Integer age, String address, String salary, Integer position,
                    LocalDateTime updatedDate);
+
+    List<EmployeeEntity> findAll();
 }

@@ -1,28 +1,28 @@
-GET http://localhost:8080/employee/getAll?page=2&size=3
+GET http://localhost:8080/employee/getAll?page=1&size=14
 Accept-Language: uz
 
 ### Get By id
-GET http://localhost:8080/employee/14
+GET http://localhost:8080/employee/4
 
 ### Create
 POST http://localhost:8080/employee/create
 Content-Type: application/json
 
 {
-  "name": "Xasan",
   "surname": "Xusanov",
   "age": 21,
   "address": "Sirdaryo",
-  "phone": "+9999999",
+  "name": "Xasan",
+  "phone": "55555",
   "salary": "400$",
-  "position": 6
+  "positionId": 4
 }
 
 ### Delete By id
-DELETE http://localhost:8080/employee/delete/13
+DELETE http://localhost:8080/employee/delete/10
 
 ### Get By Phone
-GET http://localhost:8080/employee/getByPhone/+998911111
+GET http://localhost:8080/employee/getByPhone/55555
 
 ###
 PUT http://localhost:8080/employee/update/16
@@ -37,3 +37,6 @@ Content-Type: application/json
   "position": 6,
   "salary": "600$"
 }
+
+### Download excel
+GET http://localhost:8080/employee/download-excel

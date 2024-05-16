@@ -1,20 +1,17 @@
 package org.example.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Builder;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.entity.PositionEntity;
 
 import java.time.LocalDateTime;
-
 @Setter
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class EmployeeDTO {
-    protected Integer id;
+public class CreateEmployeeDTO {
+    private Integer id;
     @NotBlank(message = "Name is required")
     private String name;
     @NotBlank(message = "Surname is required")
@@ -27,10 +24,6 @@ public class EmployeeDTO {
     private String phone;
     @NotBlank(message = "Salary is required")
     private String salary;
-    @NotBlank(message = "position is required")
-    private String position;
-    private LocalDateTime createdDate;
-    private LocalDateTime updatedDate;
-
-
+    @NotNull(message = "position is required")
+    private Integer positionId;
 }

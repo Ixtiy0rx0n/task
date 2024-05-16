@@ -25,4 +25,5 @@ public class PositionEntity {
     public PositionEntity() {
 
     }
+
 }

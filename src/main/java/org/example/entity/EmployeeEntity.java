@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
+    private Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
@@ -27,11 +27,13 @@ public class EmployeeEntity {
     private String phone;
     @Column(name = "salary")
     private String salary;
+
     @ManyToOne
-    @JoinColumn(name = "position",insertable = false,updatable = false)
+    @JoinColumn(name = "position_id", insertable = false, updatable = false)
     private PositionEntity position;
-    @Column(name = "position")
+    @Column(name = "position_id")
     private Integer positionId;
+
     @Column(name = "created_date")
     private LocalDateTime createdDate;
     @Column(name = "updated_date")
